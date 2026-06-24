@@ -1,0 +1,28 @@
+<mvc:View
+    controllerName="project1.controller.About"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        title="About Page"
+        showNavButton="true"
+        navButtonPress=".onBack">
+
+        <content>
+
+            <VBox class="sapUiMediumMargin">
+
+                <Title
+                    text="About This Application"
+                    level="H2"/>
+
+                <Text
+                    text="This is a SAPUI5 + CAP + HANA Student Management Application."/>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

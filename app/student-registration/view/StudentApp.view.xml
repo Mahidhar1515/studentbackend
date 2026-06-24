@@ -1,0 +1,104 @@
+<mvc:View
+    controllerName="project1.controller.StudentApp"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:f="sap.f"
+    xmlns:u="sap.ui.unified">
+
+    <f:DynamicPage id="dynamicPage" showFooter="true" fitContent="false">
+
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Student Management System"/>
+                </f:heading>
+                <f:actions>
+                    <Button text="Home" icon="sap-icon://home" press=".onBack"/>
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <f:header>
+            <f:DynamicPageHeader>
+                <VBox class="sapUiMediumMargin">
+                    <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+                        <form:content>
+                            <Label text="Student ID"/>
+                            <Input id="idInput" placeholder="Enter Student ID"/>
+                            <Label text="Student Name"/>
+                            <Input id="nameInput" placeholder="Enter Student Name"/>
+                            <Label text="Roll Number"/>
+                            <Input id="rollInput" placeholder="Enter Roll Number"/>
+                        </form:content>
+                    </form:SimpleForm>
+                </VBox>
+            </f:DynamicPageHeader>
+        </f:header>
+
+        <f:content>
+            <VBox class="sapUiMediumMargin">
+                <Toolbar>
+                    <Title text="Student Records"/>
+                    <ToolbarSpacer/>
+                    <SearchField
+                        id="searchField"
+                        width="300px"
+                        placeholder="Search by Student Name"
+                        search=".onSearch"
+                        liveChange=".onSearch"/>
+                </Toolbar>
+
+                <Table
+                    id="studentTable"
+                    visible="false"
+                    mode="SingleSelectMaster"
+                    selectionChange=".onRowSelect"
+                    items="{path:'/Students'}">
+
+                    <columns>
+                        <Column><Text text="ID"/></Column>
+                        <Column><Text text="NAME"/></Column>
+                        <Column><Text text="ROLL NUMBER"/></Column>
+                        <Column><Text text="STATUS"/></Column>
+                    </columns>
+
+                    <items>
+                        <ColumnListItem type="Active">
+                            <cells>
+                                <Text text="{ID}"/>
+                                <Text text="{studentName}"/>
+                                <Text text="{studentRoll}"/>
+                                <ObjectStatus
+                                    text="{path:'studentRoll', formatter:'.formatter.getStudentStatus'}"
+                                    state="{path:'studentRoll', formatter:'.formatter.getStatusState'}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+
+                </Table>
+            </VBox>
+        </f:content>
+
+        <f:footer>
+            <OverflowToolbar>
+
+                <Button
+                    text="Upload CSV"
+                    type="Accept"
+                    icon="sap-icon://upload"
+                    press=".onUploadCSV"/>
+
+                <ToolbarSpacer/>
+
+                <Button text="Save Student" type="Emphasized" press=".onSave"/>
+                <Button text="Update Student" type="Attention" press=".onUpdate"/>
+                <Button text="Delete Student" type="Reject" press=".onDelete"/>
+                <Button text="Cancel" press=".onCancel"/>
+
+            </OverflowToolbar>
+        </f:footer>
+
+    </f:DynamicPage>
+
+</mvc:View>

@@ -1,0 +1,35 @@
+<mvc:View
+    controllerName="project1.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page title="Home Page">
+
+        <content>
+
+            <VBox
+                class="sapUiMediumMargin"
+                alignItems="Center">
+
+                <Title
+                    text="Student Management System"
+                    level="H1"/>
+
+                <Button
+                    text="Go To Students"
+                    type="Emphasized"
+                    press=".onStudentPage"
+                    class="sapUiSmallMarginTop"/>
+
+                <Button
+                    text="About Page"
+                    press=".onAboutPage"
+                    class="sapUiSmallMarginTop"/>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

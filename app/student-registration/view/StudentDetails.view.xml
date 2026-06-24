@@ -1,0 +1,28 @@
+<mvc:View
+    controllerName="project1.controller.StudentDetails"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        title="Student Details"
+        showNavButton="true"
+        navButtonPress=".onBack">
+
+        <content>
+
+            <VBox class="sapUiMediumMargin">
+
+                <Title
+                    text="Student Details Page"
+                    level="H2"/>
+
+                <Text
+                    text="This page is used to display detailed student information."/>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

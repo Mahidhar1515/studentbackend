@@ -1,0 +1,31 @@
+{
+  "name": "studentbackend",
+  "version": "1.0.0",
+  "dependencies": {
+    "@cap-js/hana": "^2",
+    "@sap/cds": "^9",
+    "@sap/hana-client": "^2.28.20",
+    "@sap/hdi-deploy": "^5.6.1",
+    "@sap/xsenv": "^6.2.1",
+    "@sap/xssec": "^4.13.0",
+    "hdb": "^2.27.1"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2.4",
+    "@sap/cds-dk": "^9"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+"cds": {
+  "requires": {
+    "db": {
+      "kind": "hana"
+    },
+    "auth": {
+      "kind": "mocked"
+    }
+  }
+},
+  "private": true
+}
