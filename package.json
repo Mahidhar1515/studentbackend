@@ -15,7 +15,7 @@
     "@sap/cds-dk": "^9"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve --profile hybrid"
   },
 "cds": {
   "requires": {
